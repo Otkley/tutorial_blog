@@ -1,0 +1,10 @@
+<h1>Hello, Rails!</h1>
+
+<p><strong>Los query params vienen de la url despues del simbolo ?,
+    en llave valor y separados por el simbolo &</strong></p>
+
+<ul>
+  <% @params.each do |k,v| %>
+    <li> Key: <%="#{k}"%> Value: <%="#{v}"%></li>
+  <% end %>
+</ul>
