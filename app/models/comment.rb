@@ -1,4 +1,6 @@
 class Comment < ApplicationRecord
+  include Visible
+
   belongs_to :article
 =begin
   Active Record associations let you easily declare the relationship
