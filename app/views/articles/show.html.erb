@@ -1,0 +1,23 @@
+<h1> <%= @article.title %> </h1>
+<p> <%= @article.body %> </p>
+
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= link_to "Destroy", article_path(@article), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<%# Esto ahora mostrará el parcial una app/views/comments/_comment.html.erb
+vez por cada comentario que esté en la @article.comments colección.
+A medida que el render método itera sobre la @article.comments
+colección, asigna cada comentario a una variable local con el mismo
+nombre que el parcial, en este caso comment, que luego está
+disponible en el parcial para que la mostremos. %>
+
+<h2>Add a comment:</h2> <%# /articles/1/comments %>
+<%= render "comments/form" %>
