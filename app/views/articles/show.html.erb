@@ -10,6 +10,7 @@
 </ul>
 
 <h2>Comments</h2>
+This Article has <%= @article.comments.public_count %> comments!
 <%= render @article.comments %>
 
 <%# Esto ahora mostrará el parcial una app/views/comments/_comment.html.erb
